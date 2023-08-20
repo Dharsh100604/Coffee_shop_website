@@ -1,0 +1,101 @@
+<html>
+<head>
+<title> Order Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <script>  
+        function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+          
+        if (name==null || name==""){  
+          alert("Name can't be blank");  
+          return false;  
+        }else if(password.length<6){  
+          alert("Password must be at least 6 characters long.");  
+          return false;  
+          }  
+          var num=document.myform.num.value;s
+        if (isNaN(num)){
+          document.getElementById("numloc").innerHTML="Enter Numeric value only";
+          return false;
+        }else{
+          return true;
+          }
+          function validateemail()  
+        {  
+        var x=document.myform.email.value;  
+        var atposition=x.indexOf("@");  
+        var dotposition=x.lastIndexOf(".");  
+        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+          }  
+        }  
+        }  
+        </script>  
+<form>
+
+<fieldset>
+<legend> Place your order </legend>
+	<label>  FirstName</label>
+	<input type="text" name="textF" size="40" maxlength="5" placeholder="Enter your name" required><br><br>
+	 LastName
+	<input type="text" name="textL" placeholder="Enter your father's name" required> <br><br>
+	
+	<label> password </label>
+	<input type="password" name="pass" placeholder="password" tabindex="2" autofocus required> <br><br>
+
+	Mobile no
+	<input type="number"><br><br>
+
+	<label>Gender:</label>
+	<input type="radio" id="male" name="gender" value="m">
+	<label> Male</label>
+	<input type="radio" id="female" name="gender" value="f">
+	<label>  Female</label> <br><br>
+
+	<label>Email:<input type="email" name="email" required/></label><br><br>
+
+    <label>Date of Birth:<input type="date" name="birthDate" required></label><br><br>
+
+    <label>Pack Type
+        <select name="Pack Type">
+            <option>--None--</option>
+            <option>coffee beans</option>
+            <option>pack</option>
+            <option>powder</option>
+        </select>
+        </label><br><br>
+        <label>Grind
+			<select name="Grind">
+				<option>Choose your option</option>
+				<option>Microlot 1.23</option>
+				<option>Microlot 4.22</option>
+				<option>Pocket Brew-Selection</option>
+				<option>Pocket Brew-Micro Climate</option>
+				<option>Grand Reserve</option>
+				<option>Micro Climate</option>
+				<option>Selection</option>
+				<option>Signature</option>
+			</select>
+			</label><br><br>
+            <label>
+                Address :
+                <br />
+                <textarea name="address" cols="30" rows="3"></textarea>
+            </label><br><br>
+
+</fieldset>
+
+<input type="submit" value="Register"> <br> <br>
+<input type="reset" value ="reset">
+</form>
+
+</body>
+</html>
